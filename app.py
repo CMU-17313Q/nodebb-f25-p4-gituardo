@@ -20,7 +20,8 @@ def hardcoded_translate():
     text = data.get("text", "") if data else ""
     # For P4A, we return a dummy translation response
     return jsonify({
-        "translatedText": "Hello world"
+        "translated": "Hello, this is a hardcoded translation for P4A",
+        "is_english": False
     }), 200
 
 if __name__ == "__main__":
