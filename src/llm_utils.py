@@ -1,4 +1,7 @@
 import ollama
+MODEL_NAME = "test-model"
+CLASSIFICATION_CONTEXT = "Classify language"
+TRANSLATION_CONTEXT = "Translate to English"
 
 def get_translation(post: str) -> str:
     try:
@@ -24,7 +27,7 @@ def get_language(post: str) -> str:
         if not hasattr(resp, 'message') or resp.message is None:
             return 'English'
         lang = resp.message.content.strip()
-        return lang.split()[0].capitalize() if lang else 'English'
+        return lang
     except Exception:
         return 'English'
 
