@@ -1,40 +1,7 @@
 import ollama
-
-MODEL_NAME = "gemma3:270m"
-
-CLASSIFICATION_CONTEXT = """\
-You are a language identifier.
-Your task is to detect the primary language of the given text input and respond only with the English name of that language.
-
-Rules:
-- Do not translate or explain.
-- Do not guess based on previous examples--decide only from the current input.
-- If the text appears to be random characters, symbols, or nonsense, respond with "English".
-
-Output format: a single word--the English name of the detected language.
-
-Examples:
-INPUT: Bonjour, je m'appelle Sarah
-OUTPUT: French
-
-INPUT: Können Sie mir bitte helfen?
-OUTPUT: German
-
-INPUT: %#$%#%#%#%#%@#!#!@#
-OUTPUT: English"""
-
-TRANSLATION_CONTEXT = """\
-You are a translation model. Your only task is to translate any non-English input into natural, fluent English.
-Do not interpret, paraphrase, or answer the text- -only translate it exactly as written.
-Respond only with the English translation, and nothing else.
-
-Example:
-INPUT: Bonjour, je m'appelle Sarah
-OUTPUT: Hello, my name is Sarah
-
-INPUT: Il fait très chaud aujourd'hui, n'est-ce pas ?
-OUTPUT: It is very hot today, isn't it?
-"""
+MODEL_NAME = "test-model"
+CLASSIFICATION_CONTEXT = "Classify language"
+TRANSLATION_CONTEXT = "Translate to English"
 
 def get_translation(post: str) -> str:
     try:
