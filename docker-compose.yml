@@ -2,6 +2,9 @@ version: '3.8'
 
 services:
     mytranslator:
-       build: .
-       network_mode: "host"
-       restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+        network_mode: "host"
+        restart: always
+  

@@ -1,4 +1,5 @@
 import ollama
+import os
 
 MODEL_NAME = "gemma3:270m"
 
